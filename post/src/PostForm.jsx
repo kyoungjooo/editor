@@ -16,12 +16,7 @@ function ReactQuillEditor() {
         container: [
           [{ header: [1, 2, 3, 4, 5, false] }],
           ["bold", "italic", "underline", "strike", "blockquote"],
-          [
-            { list: "ordered" },
-            { list: "bullet" },
-            { indent: "-1" },
-            { indent: "+1" },
-          ],
+          [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
           ["link", "image"],
           [{ align: [] }, { color: [] }, { background: [] }],
           ["clean"],
@@ -52,19 +47,6 @@ function ReactQuillEditor() {
     console.log(e);
     setContent(e);
   };
-  // const handleUpdateImage = (e) => {
-  //   const { files: selectedFiles } = e.target;
-  //   const updatedFiles = [...files, ...Array.from(selectedFiles)];
-  //   setFiles(updatedFiles);
-  //   console.log("dd", files[0]);
-  //   return;
-  // };
-  // useEffect(() => {
-  //   return () => {
-  //     // 컴포넌트가 언마운트될 때 메모리 해제
-  //     files.forEach((file) => URL.revokeObjectURL(file));
-  //   };
-  // }, [files]);
 
   function ImageHandler() {
     const input = document.createElement("input");
@@ -98,19 +80,6 @@ function ReactQuillEditor() {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        {/* <input
-          type="file"
-          name="file"
-          accept="image/*"
-          multiple
-          onChange={handleUpdateImage}
-        ></input>
-        {files &&
-          files.map((file, i) => {
-            const objectUrl = URL.createObjectURL(file);
-            return <img key={i} src={objectUrl} />;
-          })} */}
-
         <input type="text" name="title" onChange={handleTitleChange}></input>
         <ReactQuill
           ref={quillRef}
@@ -124,8 +93,6 @@ function ReactQuillEditor() {
   );
 }
 export default ReactQuillEditor;
-//resize image
-//npm install quill-image-resize
 
 const Button = styled.button`
   position: absolute;

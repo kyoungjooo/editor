@@ -1,4 +1,3 @@
-import "./App.css";
 import ReactQuillEditor from "./PostForm";
 
 function App() {
